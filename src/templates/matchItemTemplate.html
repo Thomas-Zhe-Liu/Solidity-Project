@@ -1,0 +1,51 @@
+<div class="col-lg-3 col-md-4 col-sm-6 mt-3 panel-game" data-id=${matchID}>
+  <div class="card" data-id=${matchID}>
+    <div class="card-header ${bgColor}">
+      <h4 class="text-center match-status text-light">${status}</h4>
+    </div>
+    <div class="card-body bg-light">
+      <div class="row">
+        <label class="col-md text-center">Match #${matchID}
+        </label>
+      </div>
+      <hr>
+      <div class="row">
+        <strong class="ml-3 text-left">Start</strong>
+        <label class="ml-auto mr-3 text-right">${startTime}</label>
+      </div>
+      <div class="row">
+        <strong class="ml-3 text-left">End</strong>
+        <label class="ml-auto mr-3 text-right">${endTime}</label>
+      </div>
+      <div class="row">
+        <strong class="col-6 text-center">Home</strong>
+        <strong class="col-6 text-center">Away</strong>
+      </div>
+      <div class="row">
+        <span class="col-6 text-center">${homeName}</span>
+        <span class="col-6 text-center">${awayName}</span>
+      </div>
+      <div class="row">
+        <div class="col-md text-center btn-light text-info btn-modal" data-id=${matchID}>Betting Stat</div>
+      </div>
+      <div class="row bet-btns">
+        <div class="col-12 btn-group btn-group-toggle center-block" data-toggle="buttons">
+          <div class="col-6 btn ${betBtnDisable} ${betBtnStyle} btn-option" id="home" data-id=${matchID} >
+            <label data-id=${matchID}>${oddsHome}</label>
+            <input data-id=${matchID} type="radio" name="options">
+          </div>
+          <div class="col-6 btn ${betBtnDisable} ${betBtnStyle} btn-option" id="away" data-id=${matchID} >
+            <label data-id=${matchID}>${oddsAway}</label>
+            <input data-id=${matchID} type="radio" name="options">
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3 bet-page" style="display: none" data-id=${matchID} >
+        <input class="col-6 offset-1 input-bet" type="text" onkeypress="validate(event)" placeholder="Amount" data-id=${matchID}>
+        <button class="col-3 offset-1 btn btn-warning btn-bet text-center" type="button" data-id=${matchID}>Bet</button>
+      </div>
+      <div class="row mt-3 bet-page" style="display: none" data-id=${matchID}>
+        <label style="font-size: 2mm">* ${surchargePercentage}% surcharge applies, which is for compensating people who make bets earlier.</label>
+      </div>
+    </div>
+  </div>

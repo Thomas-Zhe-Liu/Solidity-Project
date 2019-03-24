@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Blockchain Sports Betting</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<style>
+  select {
+    text-align: center;
+    text-align-last: center;
+  }
+</style>
+
+<body>
+  <div class="container">
+    </br>
+    <!-- TITLE -->
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">Blockchain Sports Betting</h1>
+        <br/>
+      </div>
+    </div>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Sports</a>
+        </div>
+        <ul class="navbar-nav mr-auto" id="sportsNav">
+          <!-- SPORTS LOAD HERE -->
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="profile-dropdown" data-toggle="dropdown" href="#">Profile</a>
+            <div class="dropdown-menu dropdown-menu-right" style="width: 240px">
+              <div class="dropdown-item text-right">
+                <div class="">Address</div>
+                <div class="text-truncate">
+                  <span id="wallet-address" data-toggle="tooltip" title=""></span>
+                </div>
+              </div>
+              <div class="dropdown-item text-right">
+                <div class="text-right">Balance</div>
+                <div class="text-truncate">
+                  <span id="wallet-balance" data-toggle="tooltip" title=""></span>
+                </div>
+              </div>
+              <hr>
+              <div class="dropdown-item text-right">
+                <a class="text-right show-profile btn btn-light">My Bets</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </br>
+    <!-- FILTERING -->
+    <div class="row">
+      <select class="ml-auto col-2 form-control game-filter">
+        <option>All</option>
+        <option>Available</option>
+        <option id="bet-placed-option">Bet Placed</option>
+        <option>Match Started</option>
+        <option>Match Ended</option>
+      </select>
+      <input class="ml-1 mr-3 col-2 text-center form-control search-id" type="text" onkeypress="validate(event)" placeholder="Match ID"
+        value="">
+    </div>
+    <!-- MATCH CARDS -->
+    <div id="gamesRow" class="row">
+      <!-- GAMES LOAD HERE -->
+    </div>
+    <!-- PROFILE BETS -->
+    <table id="betTable" class="col-md mt-1 table table-hover table-bordered" style="display: none">
+      <thead>
+        <tr>
+          <th class="text-center">Match status</th>
+          <th class="text-center">Sport Name</th>
+          <th class="text-center">Match ID</th>
+          <th class="text-center">Time of bet</th>
+          <th class="text-center">Amount
+            <br>(Surcharge)</th>
+          <th class="text-center">Bet for</th>
+          <th class="text-center">Outcome
+            <br>(Compensation)</th>
+          <th class="text-center">Total</th>
+        </tr>
+      </thead>
+      <tbody id="betsRow">
+        <!-- Bets LOAD HERE -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/Chart.PieceLabel.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
